@@ -2,12 +2,12 @@ _metadata:
   major_version: 1
   minor_version: 1
 display_information:
-  name: TMI 23 bot
+  name: TMI 2023 bot
   description: TMI bot for general use.
-  background_color: "#ce000e"
+  background_color: "#1F2845"
 features:
   bot_user:
-    display_name: TMI 23 bot
+    display_name: TMI 2023 bot
     always_online: false
 oauth_config:
   scopes:
