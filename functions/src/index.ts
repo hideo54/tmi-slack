@@ -5,7 +5,7 @@ import { App, ExpressReceiver } from '@slack/bolt';
 import dotenv from 'dotenv';
 dotenv.config();
 import facultyNews from './facultyNews';
-import channelNotifier from './channelNotifier';
+import notifier from './notifier';
 
 // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 const randomChannel = process.env.SLACK_RANDOM_CHANNEL!;
@@ -38,7 +38,7 @@ export const tmiSlackHourlyJob = functions
 export const tmiSlackEventsReceiver = functions
     .region('asia-northeast1')
     .https.onRequest(
-        channelNotifier({
+        notifier({
             slackApp,
             receiver,
             channel: randomChannel,
