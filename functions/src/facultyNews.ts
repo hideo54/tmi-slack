@@ -84,7 +84,7 @@ const textToSlackBlocks = (text: string) => {
             type: 'section',
             text: {
                 type: 'mrkdwn',
-                text: text.slice(3000 * i, 3000 * (i+1)),
+                text: text.slice(3000 * i, 3000 * (i + 1)),
             },
         });
     }
