@@ -93,7 +93,7 @@ const textToSlackBlocks = (text: string) => {
 
 const func = async ({ slackApp, firestoreDb, channel }: HourlyJobFunction) => {
     const cache = (
-        await firestoreDb.collection('psi-slack').doc('cache').get()
+        await firestoreDb.collection('tmi-slack').doc('cache').get()
     ).data() as Cache;
     const readArticleUrls = cache.facultyNews;
     const news = await retrieveNews();
@@ -161,10 +161,9 @@ const func = async ({ slackApp, firestoreDb, channel }: HourlyJobFunction) => {
     }
     const articleUrls = news.articles.map(article => article.url);
     const newCache: Cache = {
-        psiNews: cache.psiNews,
         facultyNews: articleUrls,
     };
-    await firestoreDb.collection('psi-slack').doc('cache').set(newCache);
+    await firestoreDb.collection('tmi-slack').doc('cache').set(newCache);
     return;
 };
 

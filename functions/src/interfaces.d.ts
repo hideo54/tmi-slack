@@ -8,6 +8,5 @@ export interface HourlyJobFunction {
 }
 
 export interface Cache {
-    psiNews: string[];
     facultyNews: string[];
 }

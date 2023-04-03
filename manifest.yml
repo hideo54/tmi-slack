@@ -2,12 +2,12 @@ _metadata:
   major_version: 1
   minor_version: 1
 display_information:
-  name: PSI 21 bot
-  description: PSI bot for general use.
+  name: TMI 23 bot
+  description: TMI bot for general use.
   background_color: "#ce000e"
 features:
   bot_user:
-    display_name: PSI 21 bot
+    display_name: TMI 23 bot
     always_online: false
 oauth_config:
   scopes:
@@ -16,7 +16,7 @@ oauth_config:
       - channels:read
 settings:
   event_subscriptions:
-    request_url: https://asia-northeast1-hideo54.cloudfunctions.net/psiSlackEventsReceiver/slack/events
+    request_url: https://asia-northeast1-hideo54.cloudfunctions.net/tmiSlackEventsReceiver/slack/events
     bot_events:
       - channel_created
       - channel_unarchive
