@@ -97,6 +97,9 @@ const func = async ({ slackApp, firestoreDb, channel }: HourlyJobFunction) => {
     ).data() as Cache;
     const readArticleUrls = cache.facultyNews;
     const news = await retrieveNews();
+    if (news.articles.length === 0) {
+        throw new Error('Access to the faculty page failed');
+    }
     const unreadArticles = news.articles.filter(data => !readArticleUrls.includes(data.url));
     unreadArticles.reverse();
     for (const article of unreadArticles) {
